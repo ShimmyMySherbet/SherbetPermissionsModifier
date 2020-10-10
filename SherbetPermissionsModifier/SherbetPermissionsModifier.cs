@@ -162,18 +162,14 @@ namespace SherbetPermissionsModifier
             }
             if (Config.UsePermissionConfigModifiers)
             {
-                DateTime st = DateTime.Now;
-
                 if (CheckPlayerPermissionsOverrides(player, Permission, out bool All))
                 {
-                    Console.WriteLine($"config perm has override. Took {Math.Round(DateTime.Now.Subtract(st).TotalMilliseconds, 2)}");
 
                     Allowed = All;
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine($"config perm does not haver overrides. Took {Math.Round(DateTime.Now.Subtract(st).TotalMilliseconds, 2)}");
                     Allowed = false;
                     return false;
                 }
